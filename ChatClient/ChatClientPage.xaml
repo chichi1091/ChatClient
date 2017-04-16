@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:ChatClient" x:Class="ChatClient.ChatClientPage">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness"
+			iOS="0, 20, 0, 0"
+			Android="0, 0, 0, 0"
+			WinPhone="0, 0, 0, 0" />
+	</ContentPage.Padding>
+	<StackLayout>
+		<Label Text="WebSocket Chat Xamarin"></Label>
+		<Entry x:Name="name" Text="" Placeholder="name"></Entry>
+		<Entry x:Name="message" Text="" Placeholder="message"></Entry>
+		<Button x:Name="btn" Text="Send" Clicked="BtnClieckd"></Button>
+		<ScrollView x:Name="sv" BackgroundColor="Silver"
+			Orientation="Both" VerticalOptions="FillAndExpand">
+			<StackLayout x:Name="sl" HeightRequest="600">
+			</StackLayout>
+		</ScrollView>
+	</StackLayout>
+</ContentPage>
