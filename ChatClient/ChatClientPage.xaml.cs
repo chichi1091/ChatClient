@@ -10,25 +10,21 @@ namespace ChatClient
 {
 	public partial class ChatClientPage : ContentPage
 	{
-		private IWebSocketConnection client;
+		private IWebSocketConnection connection;
 		public ChatClientPage()
 		{
 			InitializeComponent();
-			Connect();
-		}
 
-		private void Connect()
-		{
-			client = Websockets.WebSocketFactory.Create();
-			client.OnLog += Connection_OnLog;
-			client.OnError += Connection_OnError;
-			client.OnMessage += Connection_OnMessage;
-			client.OnOpened += Connection_OnOpened;
-			client.Open("wss://submeeting.herokuapp.com/websocket");
+			connection = Websockets.WebSocketFactory.Create();
+			connection.OnLog += Connection_OnLog;
+			connection.OnError += Connection_OnError;
+			connection.OnMessage += Connection_OnMessage;
+			connection.OnOpened += Connection_OnOpened;
+			connection.Open("wss://submeeting.herokuapp.com/websocket");
 		}
 
 		private void BtnClieckd(object sender, EventArgs e) {
-			client.Send(this.name.Text + ": " + this.message.Text);
+			connection.Send(this.name.Text + ": " + this.message.Text);
 		}
 
 		private void Connection_OnOpened()

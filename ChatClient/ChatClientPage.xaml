@@ -13,8 +13,7 @@
 		<Button x:Name="btn" Text="Send" Clicked="BtnClieckd"></Button>
 		<ScrollView x:Name="sv" BackgroundColor="Silver"
 			Orientation="Both" VerticalOptions="FillAndExpand">
-			<StackLayout x:Name="sl" HeightRequest="600">
-			</StackLayout>
+			<StackLayout x:Name="sl" HeightRequest="600"></StackLayout>
 		</ScrollView>
 	</StackLayout>
 </ContentPage>
